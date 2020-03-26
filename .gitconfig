@@ -1,0 +1,17 @@
+[alias]
+	unstage = reset HEAD
+	uncommit = reset HEAD^
+	st = status
+	ci = commit -m
+	excl-diff = "!f() { git diff -- .\":!$1\"; }; f"
+	excl-add = "!f() { git add -- .\":!$1\"; }; f"
+	pull-submodules = submodule update --init --recursive
+	wasitme = blame
+[user]
+	name = Sam Costigan
+	email = samdcostigan@gmail.com
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
